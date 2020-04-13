@@ -1,0 +1,14 @@
+.HomePage {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 7.5fr;
+  grid-template-areas: 
+    "Header Header"
+    "MenuList ItemList";
+  
+
+  max-width: 80vw;
+  justify-items: center;
+  margin: 0 auto;
+
+}
