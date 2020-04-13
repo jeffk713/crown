@@ -4,8 +4,7 @@ import './MenuShop.component.scss';
 const MenuShop = ({category, products, imageUrl})=> (
   <div className='MenuShop'>
     <div 
-      className='MenuShop-img'
-      style={{backgroundImage: 'imageUrl'}}
+      className='MenuShop-image'
     >
       <div className='MenuTitle'>
         <h1 className='title'>{category}</h1>
