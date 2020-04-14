@@ -1,7 +1,8 @@
 .ItemList {
   grid-area: ItemList;
   border: 1px solid #000;
-  align-self: stretch;
-  margin-left: .5em;
-  padding: 2em;
+  margin-left: .5rem;
+  padding: 2rem;
+  background-image: url(../../img/itemlist.jpg);
+  background-size: cover;
 }
