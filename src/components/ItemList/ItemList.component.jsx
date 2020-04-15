@@ -1,5 +1,5 @@
 import React from 'react';
-import './ItemList.component.scss';
+import './ItemList.styles.scss';
 
 class ItemList extends React.Component {
 

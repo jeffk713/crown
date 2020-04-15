@@ -1,5 +1,5 @@
 import React from 'react';
-import './MenuShop.component.scss';
+import './MenuShop.styles.scss';
 import ski from '../../img/ski.jpg';
 import board from '../../img/board.jpg';
 import MenuDetail from '../MenuDetail/MenuDetail.component'
@@ -17,9 +17,12 @@ const MenuShop = ({category, products})=> (
         {console.log({products})}
       </div>
  
-      {{products}.products.map((product, i) => (
+      {
+        products
+        .map((product, i) => (
         <MenuDetail key={i} product={product}/>
-      ))}
+        ))
+      }
       
     </div>
   </div>

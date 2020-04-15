@@ -1,5 +1,5 @@
 import React from 'react';
-import './MenuDetail.component.scss';
+import './MenuDetail.styles.scss';
 
 const MenuDetail =({product}) => (
   <div className='MenuDetail'>

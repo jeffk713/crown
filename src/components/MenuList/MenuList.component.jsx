@@ -1,5 +1,5 @@
 import React from 'react';
-import './MenuList.component.scss';
+import './MenuList.styles.scss';
 import MenuShop from '../MenuShop/MenuShop.component'
 
 class MenuList extends React.Component {
