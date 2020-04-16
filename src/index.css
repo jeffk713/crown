@@ -18,7 +18,6 @@ body {
   color: #655A56;
   height: 100vh;
   background-size: cover;
-  background-repeat: no-repeat;
   background-image: linear-gradient(to right bottom, rgb(240, 243, 248), rgb(242, 241, 247) );
 }
 

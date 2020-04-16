@@ -1,10 +1,16 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 import './MenuDetail.styles.scss';
 
-const MenuDetail =({product}) => (
+const MenuDetail =({product, category, linkUrl, match, history}) => (
   <div className='MenuDetail'>
-    <h2 className='subtitle'>{product}</h2>
+    <h2 
+      className='subtitle'
+      onClick={() => history.push(`${match.url}${product}`)}
+    >
+    {product}
+    </h2>
   </div>
 );
 
-export default MenuDetail;
+export default withRouter(MenuDetail);

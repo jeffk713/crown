@@ -13,14 +13,14 @@ class MenuList extends React.Component {
           products:['skis', 'ski boots'],
           image: 'ski',
           id: 1,
-          linkUrl: 'shop/skis'
+          linkUrl: 'skis'
         },
         {
           category: 'boards',
           products:['boards', 'board boots'],
           imageUrl: 'board',
           id: 2,
-          linkUrl: 'shop/boards'
+          linkUrl: 'boards'
         }
         
       ]

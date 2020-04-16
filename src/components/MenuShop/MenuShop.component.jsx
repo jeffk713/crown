@@ -4,7 +4,7 @@ import ski from '../../img/ski.jpg';
 import board from '../../img/board.jpg';
 import MenuDetail from '../MenuDetail/MenuDetail.component'
 
-const MenuShop = ({category, products})=> (
+const MenuShop = ({category, products, linkUrl})=> (
   <div className='MenuShop'>
     <div> 
       <div className='MenuTitle'>
@@ -14,13 +14,13 @@ const MenuShop = ({category, products})=> (
         alt={category==='skis'?'ski':'board'} 
         />
         <h1 className='title'>{category}</h1>
-        {console.log({products})}
+        {console.log({linkUrl})}
       </div>
  
       {
         products
         .map((product, i) => (
-        <MenuDetail key={i} product={product}/>
+        <MenuDetail key={i} product={product} category={category} linkUrl={linkUrl} />
         ))
       }
       

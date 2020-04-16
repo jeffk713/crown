@@ -1,0 +1,21 @@
+.ItemIndividual {
+  width: 19%;
+  overflow: hidden;
+  margin: 15px 30px;
+
+  .image{
+    height: 280px;
+    width: 100%;
+    background-size: cover;
+  }
+
+  .itemFooter {
+    color: #000;
+    font-size: 120%;
+    height: 10%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+}
