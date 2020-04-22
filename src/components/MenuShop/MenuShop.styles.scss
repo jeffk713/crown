@@ -3,30 +3,49 @@
   flex-direction: column;
   opacity: 0.8;
   
-  .MenuShop-image {
-    background-size: cover;
-    max-width: 100%;
-    opacity: .8;
-  }
-  
   .MenuTitle {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 15rem;
-    border: 1px solid #000;
+    height: 100px;
     margin: auto;
     overflow: hidden;
-  
-    & h1 {
-        color: #000;
-        border: 1px solid #000;
-        padding: 0 1rem;
-        position: absolute;
+
+    &:hover {
+      cursor: default;
+      
+      
+      .MenuTitle-image {
+        transform: scale(1.1);
+        transition: transform 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
       }
+      
+    }
+    
+    .MenuTitle-image {
+      background-size: cover;
+      width: 100%;
+      height: 100%
+    }
+    
+    h1 {
+      color: #000;
+      border: 1px solid #000;
+      padding: 0 12px;
+      position: absolute;
+    }
   }
   
+  &:hover {
+    .MenuDetail {
+        display: block;
+    }
+  }
+  
+  .MenuDetail {
+    display: none;
+  }
 
 }
 

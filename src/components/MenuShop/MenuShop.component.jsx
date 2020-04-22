@@ -1,30 +1,32 @@
 import React from 'react';
-import './MenuShop.styles.scss';
-import ski from '../../img/ski.jpg';
-import board from '../../img/board.jpg';
-import MenuDetail from '../MenuDetail/MenuDetail.component'
 
-const MenuShop = ({category, products, linkUrl})=> (
+import MenuDetail from '../MenuDetail/MenuDetail.component';
+
+import './MenuShop.styles.scss';
+
+
+const MenuShop = ({category, products, linkUrl, images, handleHover, handleLeave, showDetails})=> (
   <div className='MenuShop'>
-    <div> 
-      <div className='MenuTitle'>
-        <img 
-        className='MenuShop-image' 
-        src={category==='skis'?ski:board} 
-        alt={category==='skis'?'ski':'board'} 
+      <div 
+        className='MenuTitle'
+        onMouseEnter={handleHover}
+        onMouseLeave={handleLeave}
+      >
+        <div 
+        className='MenuTitle-image'
+        style={{
+          backgroundImage: `url(${images[linkUrl]})`
+        }}
         />
         <h1 className='title'>{category}</h1>
-        {console.log({linkUrl})}
       </div>
- 
+
       {
         products
         .map((product, i) => (
-        <MenuDetail key={i} product={product} category={category} linkUrl={linkUrl} />
-        ))
+          <MenuDetail key={i} product={product} />
+        )) 
       }
-      
-    </div>
   </div>
     
 );

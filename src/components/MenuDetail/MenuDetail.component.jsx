@@ -1,8 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+
 import './MenuDetail.styles.scss';
 
-const MenuDetail =({product, category, linkUrl, match, history}) => (
+const MenuDetail =({product, match, history}) => (
   <div className='MenuDetail'>
     <h2 
       className='subtitle'

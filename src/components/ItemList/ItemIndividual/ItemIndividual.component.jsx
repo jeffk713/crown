@@ -1,16 +1,16 @@
 import React from 'react';
-import './ItemIndividual.styles.scss'
 
-const BoardBootsItem =({id, name, imageUrl, price}) => (
+import './ItemIndividual.styles.scss';
+
+
+const ItemIndividual =({id, img_id, images, name, price}) => (
   <div className='ItemIndividual'>
-    <div className='itemImage'>
-      <img 
-      className='image'
-      src={imageUrl}
-      alt='item-pic'
-      />
-    </div>
-    {console.log({imageUrl})}
+    <div 
+      className='itemImage'
+      style= {{
+        backgroundImage: `url(${images[img_id]})`
+      }}
+    />
     <div className='itemFooter'>
       <span className='name'>{name}</span>
       <span className='price'>{price}</span>
@@ -18,4 +18,4 @@ const BoardBootsItem =({id, name, imageUrl, price}) => (
   </div>
 )
 
-export default BoardBootsItem;
+export default ItemIndividual;

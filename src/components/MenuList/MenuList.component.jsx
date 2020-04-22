@@ -1,7 +1,10 @@
 import React from 'react';
-import './MenuList.styles.scss';
-import MenuShop from '../MenuShop/MenuShop.component'
 
+import MenuShop from '../MenuShop/MenuShop.component';
+
+import importPics from '../ImportPics/importPics.component';
+
+import './MenuList.styles.scss';
 class MenuList extends React.Component {
   constructor() {
     super()
@@ -13,24 +16,42 @@ class MenuList extends React.Component {
           products:['skis', 'ski boots'],
           image: 'ski',
           id: 1,
-          linkUrl: 'skis'
+          linkUrl: 'ski.jpg'
         },
         {
           category: 'boards',
           products:['boards', 'board boots'],
-          imageUrl: 'board',
+          image: 'board',
           id: 2,
-          linkUrl: 'boards'
+          linkUrl: 'board.jpg'
         }
         
-      ]
+      ],
+      showDetails: false
     }
   }
+  handleHover= ()=> {
+    this.setState({showDetails: true})
+  }
+
+  handleLeave= ()=> {
+    this.setState({showDetails: false})
+  }
+
   render () {
+    const { sections, showDetails } = this.state
+    const images = importPics(require.context('../assets/list-images', false, /\.(png|jpg|svg)$/));
+
     return (
       <div className='MenuList'>
-        {this.state.sections.map(({id, ...otherSectionProps}) => (
-          <MenuShop key={id} {...otherSectionProps} />
+        {sections.map(({id, ...otherSectionProps}) => (
+          <MenuShop 
+            key={id} 
+            handleHover={this.handleHover} 
+            handleLeave={this.handleleave} 
+            showDetails={showDetails}
+            images={images} 
+            {...otherSectionProps} />
         ))}
       </div>
     )

@@ -1,46 +1,51 @@
-import SkiBootsData from "../ItemSkiBoots/ItemSkiBoots.data.component";
-
 const SkisData = [
   {
     id: 1,
+    img_id: '1.png',
     name: 'Blue Tanktop',
-    imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+    //imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
     price: 25
   },
   {
     id: 2,
+    img_id: '2.png',
     name: 'Floral Blouse',
-    imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+    //imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
     price: 20
   },
   {
     id: 3,
+    img_id: '3.png',
     name: 'Floral Dress',
-    imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+    //imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
     price: 80
   },
   {
     id: 4,
+    img_id: '4.png',
     name: 'Red Dots Dress',
-    imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
+    //imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
     price: 80
   },
   {
     id: 5,
+    img_id: '5.png',
     name: 'Striped Sweater',
-    imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
+    //imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
     price: 45
   },
   {
     id: 6,
+    img_id: '6.png',
     name: 'Yellow Track Suit',
-    imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
+    //imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
     price: 135
   },
   {
     id: 7,
+    img_id: '7.png',
     name: 'White Blouse',
-    imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
+    //imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
     price: 20
   }
 ];

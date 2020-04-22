@@ -1,7 +1,10 @@
 import React from 'react';
+
+import SkiBootsData from './ItemSkiBoots.data.component';
+import ItemIndividual from '../ItemIndividual/ItemIndividual.component';
+import importPics from '../../ImportPics/importPics.component';
+
 import '../Item.styles.scss';
-import SkiBootsData from './ItemSkiBoots.data.component'
-import ItemIndividual from '../ItemIndividual/ItemIndividual.component'
 
 class ItemSkiBoots extends React.Component {
   constructor(props) {
@@ -12,14 +15,17 @@ class ItemSkiBoots extends React.Component {
     }
   }
 
+  
   render () {
     const {itemInfo} = this.state;
+    const images = importPics(require.context('../../assets/item-image/ski-boots', false, /\.(png|jpe?g|svg)$/));
+
     return (
       <div className='ItemContainer'>
         {
           itemInfo
             .map(({id, ...otherSkiBootsDataProps})=> (
-            <ItemIndividual key={id} {...otherSkiBootsDataProps} />
+            <ItemIndividual key={id} images={images} {...otherSkiBootsDataProps} />
           ))
         }
       </div>

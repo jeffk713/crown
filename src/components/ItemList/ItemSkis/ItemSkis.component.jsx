@@ -1,7 +1,10 @@
 import React from 'react';
+
+import SkisData from './ItemSkis.data.component';
+import ItemIndividual from '../ItemIndividual/ItemIndividual.component';
+import importPics from '../../ImportPics/importPics.component';
+
 import '../Item.styles.scss';
-import SkisData from './ItemSkis.data.component'
-import ItemIndividual from '../ItemIndividual/ItemIndividual.component'
 
 class ItemSkis extends React.Component {
   constructor(props) {
@@ -11,15 +14,17 @@ class ItemSkis extends React.Component {
       itemInfo: SkisData
     }
   }
-
+  
   render () {
     const {itemInfo} = this.state;
+    const images = importPics(require.context('../../assets/item-image/skis', false, /\.(png|jpe?g|svg)$/));
+
     return (
       <div className='ItemContainer'>
         {
           itemInfo
             .map(({id, ...otherSkisDataProps})=> (
-            <ItemIndividual key={id} {...otherSkisDataProps} />
+            <ItemIndividual key={id} images={images} {...otherSkisDataProps} />
           ))
         }
       </div>
