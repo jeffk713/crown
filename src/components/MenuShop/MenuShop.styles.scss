@@ -40,11 +40,13 @@
   &:hover {
     .MenuDetail {
         display: block;
+        transition: 1000ms ease all;
     }
   }
   
   .MenuDetail {
     display: none;
+    transition: 1000ms ease all;
   }
 
 }

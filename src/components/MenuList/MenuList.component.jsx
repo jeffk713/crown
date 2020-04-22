@@ -14,32 +14,29 @@ class MenuList extends React.Component {
         {
           category: 'skis',
           products:['skis', 'ski boots'],
-          image: 'ski',
           id: 1,
           linkUrl: 'ski.jpg'
         },
         {
           category: 'boards',
           products:['boards', 'board boots'],
-          image: 'board',
           id: 2,
           linkUrl: 'board.jpg'
+        },
+        {
+          category: 'apperal',
+          products:['tops', 'bottoms'],
+          id: 3,
+          linkUrl: 'apperal.jpg'
         }
         
-      ],
-      showDetails: false
+      ]
     }
-  }
-  handleHover= ()=> {
-    this.setState({showDetails: true})
-  }
-
-  handleLeave= ()=> {
-    this.setState({showDetails: false})
   }
 
   render () {
-    const { sections, showDetails } = this.state
+
+    const { sections } = this.state
     const images = importPics(require.context('../assets/list-images', false, /\.(png|jpg|svg)$/));
 
     return (
@@ -47,9 +44,6 @@ class MenuList extends React.Component {
         {sections.map(({id, ...otherSectionProps}) => (
           <MenuShop 
             key={id} 
-            handleHover={this.handleHover} 
-            handleLeave={this.handleleave} 
-            showDetails={showDetails}
             images={images} 
             {...otherSectionProps} />
         ))}

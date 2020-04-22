@@ -5,3 +5,8 @@
 body {
   font-family: 'Open Sans Condensed';
 }
+
+.App {
+  width: 80vw;
+  margin: 0 auto;
+}

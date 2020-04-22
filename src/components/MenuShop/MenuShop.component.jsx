@@ -5,13 +5,9 @@ import MenuDetail from '../MenuDetail/MenuDetail.component';
 import './MenuShop.styles.scss';
 
 
-const MenuShop = ({category, products, linkUrl, images, handleHover, handleLeave, showDetails})=> (
+const MenuShop = ({category, products, linkUrl, images} )=> (
   <div className='MenuShop'>
-      <div 
-        className='MenuTitle'
-        onMouseEnter={handleHover}
-        onMouseLeave={handleLeave}
-      >
+      <div className='MenuTitle'>
         <div 
         className='MenuTitle-image'
         style={{

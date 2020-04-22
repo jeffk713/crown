@@ -1,12 +1,11 @@
 .HomePage {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 5fr;
   grid-template-areas: 
     "MenuList ItemList";
   
 
-  width: 70vw;
-  height: 70vh;
+  min-height: 95vh;
   
   justify-items: center;
   margin: 0 auto;
