@@ -1,36 +1,30 @@
 import React from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import ItemSkis from './ItemSkis/ItemSkis.component';
-import ItemSkiBoots from './ItemSkiBoots/ItemSkiBoots.component';
-import ItemBoardBoots from './ItemBoardBoots/ItemBoardBoots.component';
-import ItemBoards from './ItemBoards/ItemBoards.component';
-import ItemTops from './ItemTops/ItemTops.component'
-import ItemBottoms from './ItemBottoms/ItemBottoms.component'
+import { selectCategory } from '../../redux/item/itemList.selectors';
+
+import ItemIndividual from '../ItemIndividual/ItemIndividual.component';
+//import importPics from '../ImportPics/importPics.component';
 
 import './ItemList.styles.scss';
 
-class ItemList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state= {}
-  }
-
-  render () {
+const ItemList =({ category }) => {
+    const {items} = category;
+    //const images= importPics(require.context(`../assets/item-image/${routeName}`, false, /\.(png|jpe?g|svg)$/));
     return (
       <div className='ItemList'>
-        <Switch>
-          <Route exact path='/'/>
-          <Route path='/boards' component={ItemBoards}/>
-          <Route path='/board boots' component={ItemBoardBoots}/>
-          <Route path='/skis' component={ItemSkis}/>
-          <Route path='/ski boots' component={ItemSkiBoots}/>
-          <Route path='/tops' component={ItemTops}/>
-          <Route path='/bottoms' component={ItemBottoms}/>
-        </Switch>
+        {
+          items
+            .map(({id, ...otherProps})=> (
+            <ItemIndividual key={id} {...otherProps} />
+          ))
+        }
       </div>
     )
   }
-}
 
-export default withRouter(ItemList);
+const mapStateToProps = (state, ownProps) => ({
+  category: selectCategory(ownProps.match.params.product)(state)
+})
+
+export default connect(mapStateToProps)(ItemList);

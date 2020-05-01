@@ -3,12 +3,12 @@ import React from 'react';
 import './ItemIndividual.styles.scss';
 
 
-const ItemIndividual =({id, img_id, images, name, price}) => (
+const ItemIndividual =({name, imageUrl, price}) => (
   <div className='ItemIndividual'>
     <div 
       className='itemImage'
       style= {{
-        backgroundImage: `url(${images[img_id]})`
+        backgroundImage: `url(${imageUrl})` //`url(${images[img_id]})`
       }}
     />
     <div className='itemFooter'>

@@ -13,21 +13,21 @@ class MenuList extends React.Component {
       sections: [
         {
           category: 'skis',
-          products:['skis', 'ski boots'],
+          products:['skis', 'ski_boots'],
           id: 1,
           linkUrl: 'ski.jpg'
         },
         {
           category: 'boards',
-          products:['boards', 'board boots'],
+          products:['boards', 'board_boots'],
           id: 2,
           linkUrl: 'board.jpg'
         },
         {
-          category: 'apperal',
-          products:['tops', 'bottoms'],
+          category: 'apparel',
+          products:['apparel'],
           id: 3,
-          linkUrl: 'apperal.jpg'
+          linkUrl: 'apparel.jpg'
         }
         
       ]

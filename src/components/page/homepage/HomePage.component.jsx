@@ -1,14 +1,13 @@
 import React from 'react';
 
 import MenuList from '../../MenuList/MenuList.component'
-import ItemList from '../../ItemList/ItemList.component'
-
+import ItemListContainer from '../../ItemListContainer/ItemListContainer.component';
 import './HomePage.styles.scss';
 
 const HomePage = () => (
     <div className='HomePage'>
         <MenuList/>
-        <ItemList/>
+        <ItemListContainer />
     </div>
 );
 
