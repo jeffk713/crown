@@ -1,55 +1,55 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { createStructuredSelector } from 'reselect';
+
+import { selectMenuGroups } from '../../redux/menu/menu.selectors'
 
 import MenuShop from '../MenuShop/MenuShop.component';
 
 import importPics from '../ImportPics/importPics.component';
 
 import './MenuList.styles.scss';
-class MenuList extends React.Component {
-  constructor() {
-    super()
 
-    this.state= {
-      sections: [
-        {
-          category: 'skis',
-          products:['skis', 'ski_boots'],
-          id: 1,
-          linkUrl: 'ski.jpg'
-        },
-        {
-          category: 'boards',
-          products:['boards', 'board_boots'],
-          id: 2,
-          linkUrl: 'board.jpg'
-        },
-        {
-          category: 'apparel',
-          products:['apparel'],
-          id: 3,
-          linkUrl: 'apparel.jpg'
-        }
-        
-      ]
-    }
+class MenuList extends React.Component {
+
+  convertedMenuGroups = (menuGroups) => {
+
+    const menuGroupsArr = Object.keys(menuGroups).map(menuGroup => {
+      const {category, products, id, linkUrl} = menuGroups[menuGroup]
+      return {
+        id,
+        category,
+        products,
+        linkUrl
+      }
+    })
+    return menuGroupsArr
   }
 
   render () {
-
-    const { sections } = this.state
+    const { menuGroups } = this.props;
+    const menuGroupsArr = this.convertedMenuGroups(menuGroups)
     const images = importPics(require.context('../assets/list-images', false, /\.(png|jpg|svg)$/));
 
     return (
       <div className='MenuList'>
-        {sections.map(({id, ...otherSectionProps}) => (
+        {
+          menuGroupsArr.map(({id, ...otherProps}) => (
           <MenuShop 
             key={id} 
             images={images} 
-            {...otherSectionProps} />
-        ))}
+            {...otherProps} />
+          ))
+        }
       </div>
     )
   }
 }
 
-export default MenuList;
+const mapStateToProps = createStructuredSelector({
+  menuGroups: selectMenuGroups
+}
+)
+
+export default connect(mapStateToProps)(MenuList);

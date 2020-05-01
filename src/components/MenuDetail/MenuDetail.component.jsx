@@ -9,9 +9,10 @@ const MenuDetail =({product, match, history}) => (
       className='subtitle'
       onClick={() => history.push(`${match.url}${product}`)}
     >
-    {product}
+    {product.split("_").join(" ")}
     </h2>
   </div>
 );
+
 
 export default withRouter(MenuDetail);

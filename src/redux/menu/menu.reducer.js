@@ -16,7 +16,7 @@ const INITIAL_STATE = {
       category: 'apparel',
       products:['apparel'],
       id: 3,
-      linkUrl: 'apperal.jpg'
+      linkUrl: 'apparel.jpg'
     }
   }
 }
